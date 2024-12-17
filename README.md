@@ -1,7 +1,7 @@
 # skiResultsR
-This package extract ski race results data and related ski race information from the website: https://skiresults.co.uk/.
+This package extracts ski race results data and related ski race information from the website: https://skiresults.co.uk/.
 
-GOAL: Easily accessible race results data can be used to make decisions regarding future race formats and / or number of events.
+*GOAL*: Easily accessible race results data can be used to make decisions regarding future race formats, number of events or individual racer performance over time.
 
 ## Ski Events
 Each event has it's own endpoint on the website (e.g. https://skiresults.co.uk/events/1319)
