@@ -1,0 +1,38 @@
+$(function () {
+  var tabContainers = $('div.tabContainers > *');
+  var extras = $('div.tabContainers > div.extras');
+
+  var selectTab = function(tabLink) {
+    tabContainers.hide().filter(tabLink.hash).show();
+
+    $('ul.tabs li').removeClass('active');
+    $(tabLink).parent().addClass('active');
+    $('.tabs-title').text($(tabLink).text());
+  }
+
+  var tabs = $('ul.tabs li a').click(function () {
+    selectTab(this);
+    history.pushState(this.hash, '', this.hash);
+    return false;
+  });
+
+  $('a.extra').click(function () {
+    extras.hide().filter(this.hash).show();
+    return false;
+  });
+
+  extras.hide();
+
+  update = function() {
+    if(window.location.hash) {
+      selectTab(tabs.filter(function(index) {
+        return this.hash == window.location.hash;
+      }).get(0));
+    } else {
+      selectTab(tabs.filter(':first').get(0));
+    }
+  }
+
+  $(window).on("popstate", update);
+  update();
+});

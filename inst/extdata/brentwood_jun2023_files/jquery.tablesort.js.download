@@ -1,0 +1,140 @@
+(function($) {
+	var defaults = {
+		ascending : '',
+		descending : ''
+	};
+
+	$.fn.sortable = function(options) {
+		var settings = $.extend( {}, defaults, options);
+
+		var makeSortable = function(table) {
+			// Find header row (if no thead-element, use the first row in the table)
+			var headRow = null;
+			if (table.tHead && table.tHead.length) {
+				headRow = table.tHead.rows[0];
+			} else if (table.rows.length) {
+				headRow = table.rows[0];
+			} else {
+				return;
+			}
+
+			// Get header cells.
+			var cells = headRow.cells;
+
+			if (!cells.length)
+				return;
+
+			// Make headings clickable
+			var realI = 0;
+			for ( var i = 0; i < cells.length; i++) {
+				var $cell = $(cells[i]);
+				var comparator = null;
+
+				if ($cell.hasClass('sortable')) {
+					comparator = null;
+				} else if ($cell.hasClass('sortableNum')) {
+					comparator = compareNum;
+				} else if ($cell.hasClass('sortableDate')) {
+					comparator = compareDate;
+				} else {
+          realI += cells[i].colSpan;
+					continue;
+			  }
+
+				var t = $cell.click(sortClick);
+
+				t[0].sortData = {
+					table : table,
+					column : realI,
+					comparator : comparator
+				};
+
+        realI += cells[i].colSpan;
+			}
+		};
+
+		var compareNum = function(a, b, r) {
+			a = parseFloat(a.replace(/[^\d\.]+/gi, ''));
+			b = parseFloat(b.replace(/[^\d\.]+/gi, ''));
+
+			if (isNaN(a))
+				return 1;
+			if (isNaN(b))
+				return -1;
+
+			
+			return r ? (b - a) : (a - b);
+		};
+
+		var compareDate = function(a, b, r) {
+			a = a.replace(/st|nd|th/gi, '');
+			b = b.replace(/st|nd|th/gi, '');
+
+			return r ? (Date.parse(b) - Date.parse(a)) : (Date.parse(a) - Date.parse(b));
+		};
+		
+		var sortClick = function() {
+			var data = this.sortData;
+
+			if (data) {
+				sortTable(data.table, data.column, data.comparator);
+			}
+		};
+
+		var sortTable = function(table, column, func) {
+			var rows = $(table).find('tbody > tr').get();
+			
+			if (table.sortColumn == column) {
+				table.reverse = !table.reverse;
+			} else {
+				table.reverse = false;
+			}
+				
+			rows.sort(function(a, b) {
+				var $cellA = $(a).children().eq(column);
+				var $cellB = $(b).children().eq(column);
+				
+				var $childrenA = $cellA.children(':visible');
+				var $childrenB = $cellB.children(':visible');
+				
+				var keyA = $cellA.children().length ? $childrenA.text() : $cellA.text();
+				var keyB = $cellB.children().length ? $childrenB.text() : $cellB.text();
+				
+				keyA = keyA.toLowerCase();
+				keyB = keyB.toLowerCase();
+				
+				if (func == null) {
+					if (keyA < keyB)
+						return table.reverse ? 1 : -1;
+					if (keyA > keyB)
+						return table.reverse ? -1 : 1;
+
+					return $(a).index() - $(b).index();
+				} else {
+					return func(keyA, keyB, table.reverse);
+				}
+			});
+			
+			table.sortColumn = column;
+
+			var odd = true;
+			
+			$.each(rows, function(index, row) {
+				if(odd) $(row).addClass("odd");
+				else    $(row).removeClass("odd");
+				
+				odd = !odd;
+				
+				$(table).children('tbody').append(row);
+			});
+		};
+
+		return this.each(function() {
+			makeSortable(this);
+		});
+	};
+})(jQuery);
+
+$(document).ready(function() {
+  $('table.sortable').sortable();
+});

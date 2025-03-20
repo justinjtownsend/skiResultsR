@@ -1,1 +1,7 @@
-exportPattern("^[[:alpha:]]+")
+export(extract_raceTables)
+export(process_raceEvent_files)
+importFrom(rvest, html_elements)
+importFrom(rvest, html_text)
+importFrom(rvest, html_attr)
+importFrom(xml2, read_html)
+importFrom(magrittr, "%>%")
