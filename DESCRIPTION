@@ -3,16 +3,27 @@ Type: Package
 Title: Extract and Analyze Ski Race Results
 Version: 0.1.0
 Authors@R: 
-    person("Justin", "Townsend", , "justin@example.com", role = c("aut", "cre"))
-Description: A package for extracting and analyzing ski race results from skiresults.co.uk.
-    The package provides functions to parse HTML files containing race results
-    and convert them into structured data frames for analysis.
+    person("Justin", "Townsend", , "justinjtownsend@gmail.com", role = c("aut", "cre"))
+Description: A comprehensive R package for extracting and analyzing ski race results 
+    from skiresults.co.uk HTML files. The package provides functions to parse HTML 
+    files containing race results and convert them into structured data frames 
+    for analysis and visualization.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+URL: https://justinjtownsend.github.io/skiResultsR/, https://github.com/justinjtownsend/skiResultsR
+BugReports: https://github.com/justinjtownsend/skiResultsR/issues
 Imports: 
     rvest (>= 1.0.3),
     xml2 (>= 1.3.3),
-    magrittr (>= 2.0.3)
+    magrittr (>= 2.0.3),
+    purrr (>= 1.0.0),
+    tibble (>= 3.0.0)
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+VignetteBuilder: knitr

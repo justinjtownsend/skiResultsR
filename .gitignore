@@ -2,7 +2,20 @@
 .Rhistory
 .Rdata
 .RData
+.quarto
 .httr-oauth
 .DS_Store
-.quarto
+
+# File types
+*.gz
+
+# Cursor directory
+.cursor/
+
 /data-raw
+docs
+
+# Manual testing files
+tests/manual_integration_test.R
+tests/manual_run_tests.R.txt
+check_output.log
