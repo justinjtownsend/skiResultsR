@@ -7,6 +7,9 @@
 #' @param file_path Path to the HTML file containing event results
 #' @param race_id Race identifier in the format 'race-9973'
 #' @return A data frame containing the race results
+#' @family race functions
+#' @seealso [get_races()] for extracting all races from an event,
+#'   [get_race_types()] for getting available race IDs
 #' @export
 #' @examples
 #' \dontrun{
@@ -306,6 +309,9 @@ get_race <- function(file_path, race_id) {
 #' @param file_path Path to the HTML file containing event results
 #' @return A named list of data frames, where each element is named by race_id
 #'   and contains the race results from get_race()
+#' @family race functions
+#' @seealso [get_race()] for extracting a single race,
+#'   [get_race_types()] for getting available race IDs
 #' @export
 #' @examples
 #' \dontrun{
@@ -563,6 +569,10 @@ get_races <- function(file_path) {
 #'     \item{Profile URL}{URL to racer's profile page}
 #'     \item{Club}{Racer's club}
 #'   }
+#' @family data extraction functions
+#' @seealso [get_points()] for extracting points data,
+#'   [get_clubs()] for extracting club information,
+#'   [get_race()] for extracting complete race results
 #' @export
 #' @examples
 #' \dontrun{
@@ -835,6 +845,10 @@ get_racers <- function(file_path, race_id) {
 #'     \item{[Points Category 2]}{Points for second category}
 #'     \item{...}{Additional points category columns}
 #'   }
+#' @family data extraction functions
+#' @seealso [get_racers()] for extracting racer information,
+#'   [get_clubs()] for extracting club information,
+#'   [get_race()] for extracting complete race results
 #' @export
 #' @examples
 #' \dontrun{

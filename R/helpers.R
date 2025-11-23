@@ -20,6 +20,9 @@
 #'       \item{tbl_cols}{Column names from race table header (comma-separated, only if ext=Y)}
 #'       \item{tbl_cols_cnt}{Number of columns in race table header (only if ext=Y)}
 #'     }
+#' @family race functions
+#' @seealso [get_race()] for extracting a single race by ID,
+#'   [get_races()] for extracting all races from an event
 #' @export
 #' @examples
 #' \dontrun{
@@ -228,6 +231,10 @@ get_race_types <- function(file_path, ext = NULL) {
 #'     \item{Club}{Club name}
 #'     \item{Profile URL}{URL to club's profile page}
 #'   }
+#' @family data extraction functions
+#' @seealso [get_racers()] for extracting racer information,
+#'   [get_points()] for extracting points data,
+#'   [get_race()] for extracting complete race results
 #' @export
 #' @examples
 #' \dontrun{

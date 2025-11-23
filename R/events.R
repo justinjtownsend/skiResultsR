@@ -13,6 +13,9 @@
 #'     \item{points}{List of points data for each race}
 #'     \item{clubs}{List of clubs for each race}
 #'   }
+#' @family event functions
+#' @seealso [get_event_dtls()] for extracting event details only,
+#'   [get_event_summary()] for generating event summaries
 #' @export
 #' @examples
 #' \dontrun{
@@ -130,6 +133,9 @@ get_event <- function(file_path) {
 #'     \item{format}{Event format (e.g., "LSERSA")}
 #'     \item{status}{Event status (e.g., "Results Available")}
 #'   }
+#' @family event functions
+#' @seealso [get_event()] for extracting complete event data,
+#'   [get_event_summary()] for generating event summaries
 #' @export
 #' @examples
 #' \dontrun{
@@ -241,6 +247,9 @@ get_event_dtls <- function(file_path) {
 #'     \item{race_summary}{Tibble with race statistics (tot_racers, overall_time_fastest, etc.)}
 #'     \item{race_participation}{Tibble with participation statistics (tot_racers, cat_*, club_*)}
 #'   }
+#' @family event functions
+#' @seealso [get_event()] for extracting complete event data,
+#'   [get_event_dtls()] for extracting event details only
 #' @export
 #' @examples
 #' \dontrun{
