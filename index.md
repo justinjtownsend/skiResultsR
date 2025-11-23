@@ -14,7 +14,7 @@ visualization, and reporting.
 - **🏁 Race Analysis** - Get individual race results with cleaned times
   and rankings  
 - **👥 Racer Information** - Extract participant details with profile
-  links and club affiliations
+  links and club affiliations ()
 - **🏆 Points Data** - Analyze points across different categories and
   competitions
 - **📊 Clean Data Structures** - Consistent data frames ready for
