@@ -1,0 +1,66 @@
+Failure ('test-get_event.R:12:3'): get_event works with sample data
+Expected `result` to be an S3 object.
+Actual OO type: none.
+
+Failure ('test-get_event.R:16:3'): get_event works with sample data
+Expected `all(expected_components %in% names(result))` to be TRUE.
+Differences:
+`actual`:   FALSE
+`expected`: TRUE 
+
+
+Failure ('test-get_event.R:19:3'): get_event works with sample data
+Expected `result$event_dtls` to be an S3 object.
+Actual OO type: none.
+
+Failure ('test-get_event.R:20:3'): get_event works with sample data
+Expected `result$race_types` to have type "list".
+Actual type: "NULL"
+
+Failure ('test-get_event.R:21:3'): get_event works with sample data
+Expected `result$races` to have type "list".
+Actual type: "NULL"
+
+Failure ('test-get_event.R:22:3'): get_event works with sample data
+Expected `result$racers` to be an S3 object.
+Actual OO type: none.
+
+Failure ('test-get_event.R:23:3'): get_event works with sample data
+Expected `result$race_points` to be an S3 object.
+Actual OO type: none.
+
+Failure ('test-get_event.R:24:3'): get_event works with sample data
+Expected `result$clubs` to be an S3 object.
+Actual OO type: none.
+
+Failure ('test-get_event.R:44:3'): get_event integrates all components correctly
+Expected `"title" %in% names(result$event_dtls)` to be TRUE.
+Differences:
+`actual`:   FALSE
+`expected`: TRUE 
+
+
+Failure ('test-get_event.R:45:3'): get_event integrates all components correctly
+Expected `result$event_dtls$title` to have type "character".
+Actual type: "NULL"
+
+Failure ('test-get_event.R:48:3'): get_event integrates all components correctly
+Expected `result$races` to have type "list".
+Actual type: "NULL"
+
+Failure ('test-get_event.R:52:3'): get_event integrates all components correctly
+Expected `all(expected_racer_cols %in% names(result$racers))` to be TRUE.
+Differences:
+`actual`:   FALSE
+`expected`: TRUE 
+
+
+Failure ('test-get_event.R:60:3'): get_event integrates all components correctly
+Expected `result$race_points` to be an S3 object.
+Actual OO type: none.
+
+Error ('test-get_event.R:63:3'): get_event integrates all components correctly
+Error in `if (nrow(result$race_points) > 0) {     expected_points_cols <- c("name", "bib", "rank", "category", "points", "race_id", "points_category")     expect_true(all(expected_points_cols %in% names(result$race_points))) }`: argument is of length zero
+
+Error ('test-get_event.R:96:3'): get_event returns consistent data across components
+Error in `if (nrow(result$racers) > 0 && nrow(result$race_points) > 0) {     expect_type(result$racers$name, "character")     expect_type(result$race_points$name, "character") }`: missing value where TRUE/FALSE needed
