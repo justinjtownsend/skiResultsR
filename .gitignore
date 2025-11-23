@@ -5,6 +5,7 @@
 .quarto
 .httr-oauth
 .DS_Store
+.Renviron
 
 # File types
 *.gz
@@ -13,7 +14,6 @@
 .cursor/
 
 /data-raw
-docs
 
 # Manual testing files
 tests/manual_integration_test.R
