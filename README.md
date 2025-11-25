@@ -1,7 +1,7 @@
 # skiResultsR <img src="man/figures/logo.png" align="right" height="139" alt="" />
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/justinjtownsend/skiResultsR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/justinjtownsend/skiResultsR/actions/workflows/R-CMD-check.yaml)
+# [![R-CMD-check](https://github.com/justinjtownsend/skiResultsR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/justinjtownsend/skiResultsR/actions/workflows/R-CMD-check.yaml)
 [![CRAN status](https://www.r-pkg.org/badges/version/skiResultsR)](https://CRAN.R-project.org/package=skiResultsR)
 <!-- badges: end -->
 
