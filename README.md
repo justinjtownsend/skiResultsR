@@ -3,6 +3,7 @@
 <!-- badges: start -->
 <!-- [![R-CMD-check](https://github.com/justinjtownsend/skiresultsR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/justinjtownsend/skiresultsR/actions/workflows/R-CMD-check.yaml) -->
 [![CRAN status](https://www.r-pkg.org/badges/version/skiresultsR)](https://CRAN.R-project.org/package=skiresultsR)
+[![Github All Releases](https://img.shields.io/github/downloads/justinjtownsend/skiResultsR/total.svg)]()
 <!-- badges: end -->
 
 `skiresultsR` provides a thoughtful set of functions to extract race data from HTML files generated at skiresults.co.uk. It is designed to work with an event, extracting all races, racers and their clubs. Other information about the event is also captured.
