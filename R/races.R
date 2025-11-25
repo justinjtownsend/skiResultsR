@@ -14,7 +14,7 @@
 #' @examples
 #' \dontrun{
 #' # Extract specific race by ID
-#' file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+#' file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 #' race_data <- get_race(file_path, "race-9973")
 #' 
 #' head(race_data)
@@ -316,7 +316,7 @@ get_race <- function(file_path, race_id) {
 #' @examples
 #' \dontrun{
 #' # Extract all races from an event
-#' file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+#' file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 #' races <- get_races(file_path)
 #' 
 #' # Access specific race by ID
@@ -577,7 +577,7 @@ get_races <- function(file_path) {
 #' @examples
 #' \dontrun{
 #' # Extract racers from a specific race
-#' file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+#' file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 #' racers <- get_racers(file_path, "race-9973")
 #' 
 #' head(racers)
@@ -853,7 +853,7 @@ get_racers <- function(file_path, race_id) {
 #' @examples
 #' \dontrun{
 #' # Extract points for a specific race
-#' file_path <- system.file("extdata", "brentwood_jun2023.html", package = "skiResultsR")
+#' file_path <- system.file("extdata", "brentwood_jun2023.html", package = "skiresultsR")
 #' points_data <- get_points(file_path, "race-9711")
 #' 
 #' head(points_data)

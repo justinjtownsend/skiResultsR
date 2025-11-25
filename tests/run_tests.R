@@ -1,10 +1,10 @@
 #!/usr/bin/env Rscript
 
-# Simple test runner for skiResultsR package
+# Simple test runner for skiresultsR package
 # Use this if devtools::test() has issues
 
-cat("Loading skiResultsR package...\n")
-library(skiResultsR)
+cat("Loading skiresultsR package...\n")
+library(skiresultsR)
 
 cat("Loading testthat...\n")
 library(testthat)

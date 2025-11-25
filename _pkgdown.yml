@@ -1,4 +1,4 @@
-url: https://justinjtownsend.github.io/skiResultsR
+url: https://justinjtownsend.github.io/skiresultsR
 template:
   bootstrap: 5
   light-switch: true
@@ -58,5 +58,5 @@ navbar:
       aria-label: View Reference
     github:
       icon: fab fa-github fa-lg
-      href: https://github.com/justinjtownsend/skiResultsR
+      href: https://github.com/justinjtownsend/skiresultsR
       aria-label: GitHub

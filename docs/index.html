@@ -5,7 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Extract and Analyze Ski Race Results • skiResultsR</title>
+<title>Extract and Analyze Ski Race Results • skiresultsR</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" sizes="any" href="favicon.ico">
+<link rel="manifest" href="site.webmanifest">
 <script src="lightswitch.js"></script><script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
@@ -13,6 +18,7 @@
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Extract and Analyze Ski Race Results">
 <meta name="description" content="A comprehensive R package for extracting and analyzing ski race results from skiresults.co.uk HTML files. The package provides functions to parse HTML files containing race results and convert them into structured data frames for analysis and visualization.">
 <meta property="og:description" content="A comprehensive R package for extracting and analyzing ski race results from skiresults.co.uk HTML files. The package provides functions to parse HTML files containing race results and convert them into structured data frames for analysis and visualization.">
+<meta property="og:image" content="https://justinjtownsend.github.io/skiresultsR/logo.png">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -20,7 +26,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top " aria-label="Site navigation"><div class="container">
 
-    <a class="navbar-brand me-2" href="index.html">skiResultsR</a>
+    <a class="navbar-brand me-2" href="index.html">skiresultsR</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
@@ -36,7 +42,7 @@
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="articles/getting-started.html">Getting Started with skiResultsR</a></li>
+<li><a class="dropdown-item" href="articles/getting-started.html">Getting Started with skiresultsR</a></li>
     <li><a class="dropdown-item" href="articles/examples.html">Function Examples</a></li>
   </ul>
 </li>
@@ -45,7 +51,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/justinjtownsend/skiResultsR" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/justinjtownsend/skiresultsR" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-lightswitch" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Light switch"><span class="fa fa-sun"></span></button>
   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-lightswitch">
@@ -62,68 +68,57 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="skiresultsr-">skiResultsR <img src="reference/figures/logo.png" align="right" height="139" alt=""><a class="anchor" aria-label="anchor" href="#skiresultsr-"></a>
-</h1></div>
+<div class="page-header">
+<img src="logo.png" class="logo" alt=""><h1 id="skiresultsr-">skiresultsR <a class="anchor" aria-label="anchor" href="#skiresultsr-"></a>
+</h1>
+</div>
 <!-- badges: start -->
+<!-- [![R-CMD-check](https://github.com/justinjtownsend/skiresultsR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/justinjtownsend/skiresultsR/actions/workflows/R-CMD-check.yaml) -->
 
-<blockquote>
-<p>Extract and analyze ski race results from skiresults.co.uk HTML files</p>
-</blockquote>
-<p><code>skiResultsR</code> provides a comprehensive set of functions for extracting structured data from ski race result HTML files generated by skiresults.co.uk. Convert race data into clean data frames for analysis, visualization, and reporting.</p>
+<p><code>skiresultsR</code> provides a thoughtful set of functions to extract race data from HTML files generated at skiresults.co.uk. It is designed to work with an event, extracting all races, racers and their clubs. Other information about the event is also captured.</p>
 <div class="section level2">
 <h2 id="features">Features<a class="anchor" aria-label="anchor" href="#features"></a>
 </h2>
 <ul>
 <li>
-<strong>🎿 Complete Event Extraction</strong> - Extract all event data with a single function call</li>
+<strong>Event Extraction</strong> - Get event data with a single function call</li>
 <li>
-<strong>🏁 Race Analysis</strong> - Get individual race results with cleaned times and rankings<br>
-</li>
+<strong>Race(s)</strong> - Get individual race results for further analysis</li>
 <li>
-<strong>👥 Racer Information</strong> - Extract participant details with profile links and club affiliations</li>
+<strong>Points</strong> - Get points from (scoring) races</li>
 <li>
-<strong>🏆 Points Data</strong> - Analyze points across different categories and competitions</li>
-<li>
-<strong>📊 Clean Data Structures</strong> - Consistent data frames ready for analysis</li>
-<li>
-<strong>🔗 Preserve Links</strong> - Maintain hyperlinks to racer profiles and club pages</li>
+<strong>Racer / Club Information</strong> - Get racer, club details</li>
 </ul>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Install from CRAN (when available)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"skiResultsR"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Or install development version from GitHub</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"yourusername/skiResultsR"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Or install development version from GitHub</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"justinjtownsend/skiresultsR"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="quick-start">Quick Start<a class="anchor" aria-label="anchor" href="#quick-start"></a>
 </h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://justinjtownsend.github.io/skiResultsR/">skiResultsR</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://justinjtownsend.github.io/skiresultsR/">skiresultsR</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Get path to sample data</span></span>
-<span><span class="va">file_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"chatham_oct2023.html"</span>, package <span class="op">=</span> <span class="st">"skiResultsR"</span><span class="op">)</span></span>
+<span><span class="va">file_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"chatham_oct2023.html"</span>, package <span class="op">=</span> <span class="st">"skiresultsR"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Extract complete event data</span></span>
 <span><span class="va">event_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_event.html">get_event</a></span><span class="op">(</span><span class="va">file_path</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># View event summary</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">event_data</span><span class="op">$</span><span class="va">event_summary</span><span class="op">$</span><span class="va">title</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">event_data</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">event_dtls</span><span class="op">$</span><span class="va">title</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Chatham Ski Slope: LSERSA (07 October 2023)"</span></span>
 <span></span>
 <span><span class="co"># View available races</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">event_data</span><span class="op">$</span><span class="va">races</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">event_data</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">races</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "race-9973" "race-9981" "race-9974" "race-9975" "race-9976"</span></span>
 <span></span>
 <span><span class="co"># Get racers</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">event_data</span><span class="op">$</span><span class="va">racers</span><span class="op">)</span></span>
-<span><span class="co">#&gt;        name                              href club club_href</span></span>
-<span><span class="co">#&gt; 1 BUNTON Ryan https://skiresults.co.uk/people/30 &lt;NA&gt;      &lt;NA&gt;</span></span>
-<span><span class="co">#&gt; 2  BROWN Ben  https://skiresults.co.uk/people/23 &lt;NA&gt;      &lt;NA&gt;</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">event_data</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">racers</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="main-functions">Main Functions<a class="anchor" aria-label="anchor" href="#main-functions"></a>
@@ -132,11 +127,6 @@
 <h3 id="primary-functions">Primary Functions<a class="anchor" aria-label="anchor" href="#primary-functions"></a>
 </h3>
 <table class="table">
-<colgroup>
-<col width="35%">
-<col width="32%">
-<col width="32%">
-</colgroup>
 <thead><tr>
 <th>Function</th>
 <th>Purpose</th>
@@ -145,17 +135,17 @@
 <tbody>
 <tr>
 <td><code><a href="reference/get_event.html">get_event()</a></code></td>
-<td>Extract complete event data</td>
+<td>Get complete event data</td>
 <td>List with all components</td>
 </tr>
 <tr>
 <td><code><a href="reference/get_races.html">get_races()</a></code></td>
-<td>Extract all race tables</td>
+<td>Get all race tables</td>
 <td>List of race data frames</td>
 </tr>
 <tr>
 <td><code><a href="reference/get_race.html">get_race()</a></code></td>
-<td>Extract specific race by ID/type</td>
+<td>Get specific race by ID/type</td>
 <td>Single race data frame</td>
 </tr>
 </tbody>
@@ -173,18 +163,23 @@
 <tbody>
 <tr>
 <td><code><a href="reference/get_racers.html">get_racers()</a></code></td>
-<td>Extract unique racers with links</td>
+<td>Get racers with links</td>
 <td>Data frame</td>
 </tr>
 <tr>
-<td><code>get_race_points()</code></td>
-<td>Extract points across categories</td>
+<td><code><a href="reference/get_points.html">get_points()</a></code></td>
+<td>Get points across races</td>
 <td>Data frame</td>
 </tr>
 <tr>
 <td><code><a href="reference/get_event_summary.html">get_event_summary()</a></code></td>
-<td>Extract event metadata</td>
-<td>List</td>
+<td>Get event statistics</td>
+<td>List of data frames</td>
+</tr>
+<tr>
+<td><code><a href="reference/get_race_types.html">get_race_types()</a></code></td>
+<td>Get race tyes</td>
+<td>Data frame</td>
 </tr>
 </tbody>
 </table>
@@ -198,35 +193,26 @@
 </h3>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Quick event overview</span></span>
-<span><span class="va">summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_event_summary.html">get_event_summary</a></span><span class="op">(</span><span class="va">file_path</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"Event:"</span>, <span class="va">summary</span><span class="op">$</span><span class="va">title</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"Date:"</span>, <span class="va">summary</span><span class="op">$</span><span class="va">date</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"Venue:"</span>, <span class="va">summary</span><span class="op">$</span><span class="va">slope</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_event_summary.html">get_event_summary</a></span><span class="op">(</span><span class="va">event_data</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"Total Racers:"</span>, <span class="va">summary</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">race_summary</span><span class="op">$</span><span class="va">tot_racers</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"DNFs"</span>, <span class="va">summary</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">race_summary</span><span class="op">$</span><span class="va">overall_time_dnf</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"Aldershot Racers:"</span>, <span class="va">summary</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">race_participation</span><span class="op">$</span><span class="va">club_ASR</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">""</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"Overall Fastest Time:"</span>, <span class="va">summary</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">race_summary</span><span class="op">$</span><span class="va">overall_time_fastest</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="analyze-race-performance">Analyze Race Performance<a class="anchor" aria-label="anchor" href="#analyze-race-performance"></a>
 </h3>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Get a specific race</span></span>
-<span><span class="va">race_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_race.html">get_race</a></span><span class="op">(</span><span class="va">file_path</span>, <span class="st">"race-9973"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># View race statistics</span></span>
-<span><span class="kw">if</span> <span class="op">(</span><span class="st">"time_cleaned"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">race_data</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">times</span> <span class="op">&lt;-</span> <span class="va">race_data</span><span class="op">$</span><span class="va">time_cleaned</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">race_data</span><span class="op">$</span><span class="va">time_cleaned</span><span class="op">)</span><span class="op">]</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"Fastest time:"</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">min</a></span><span class="op">(</span><span class="va">times</span><span class="op">)</span>, <span class="st">"seconds"</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"Average time:"</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">times</span><span class="op">)</span>, <span class="st">"seconds"</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre></div>
+<span><span class="va">race_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_race.html">get_race</a></span><span class="op">(</span><span class="va">file_path</span>, <span class="st">"race-9973"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="extract-points-data">Extract Points Data<a class="anchor" aria-label="anchor" href="#extract-points-data"></a>
 </h3>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Get points across all categories</span></span>
-<span><span class="va">points</span> <span class="op">&lt;-</span> <span class="fu">get_race_points</span><span class="op">(</span><span class="va">file_path</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Analyze by category</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">points</span><span class="op">$</span><span class="va">points_category</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/aggregate.html" class="external-link">aggregate</a></span><span class="op">(</span><span class="va">points</span> <span class="op">~</span> <span class="va">points_category</span>, data <span class="op">=</span> <span class="va">points</span>, FUN <span class="op">=</span> <span class="va">mean</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">points</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_points.html">get_points</a></span><span class="op">(</span><span class="va">file_path</span>, <span class="st">"race-9973"</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -235,13 +221,17 @@
 <p>The package returns consistent, well-structured data:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">event_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_event.html">get_event</a></span><span class="op">(</span><span class="va">file_path</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">event_data</span>, max.level <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; List of 5</span></span>
-<span><span class="co">#&gt;  $ event_summary: List of 8</span></span>
-<span><span class="co">#&gt;  $ races        : List of 5</span></span>
-<span><span class="co">#&gt;  $ racers       : 'data.frame': 150 obs. of 4 variables</span></span>
-<span><span class="co">#&gt;  $ race_points  : 'data.frame': 0 obs. of 7 variables  </span></span>
-<span><span class="co">#&gt;  $ clubs        : 'data.frame': 0 obs. of 2 variables</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">event_data</span>, max.level <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#&gt; List of 1</span></span>
+<span><span class="co">#&gt;  $ 1319:List of 6</span></span>
+<span><span class="co">#&gt;   ..$ event_dtls:'data.frame':   1 obs. of  6 variables:</span></span>
+<span><span class="co">#&gt;   ..$ race_types: tibble [5 × 4] (S3: tbl_df/tbl/data.frame)</span></span>
+<span><span class="co">#&gt;   ..$ races     :List of 5</span></span>
+<span><span class="co">#&gt;   ..$ racers    : tibble [97 × 7] (S3: tbl_df/tbl/data.frame)</span></span>
+<span><span class="co">#&gt;   ..$ points    :List of 2</span></span>
+<span><span class="co">#&gt;   ..$ clubs     : tibble [10 × 2] (S3: tbl_df/tbl/data.frame)</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "skiresults_event" "list"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="sample-data">Sample Data<a class="anchor" aria-label="anchor" href="#sample-data"></a>
@@ -255,27 +245,22 @@
 </ul>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># List available sample files</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, package <span class="op">=</span> <span class="st">"skiResultsR"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, package <span class="op">=</span> <span class="st">"skiresultsR"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="documentation">Documentation<a class="anchor" aria-label="anchor" href="#documentation"></a>
 </h2>
 <ul>
 <li>
-<strong>Vignette</strong>: <a href="articles/getting-started.html">Getting Started with skiResultsR</a>
+<strong>Vignette</strong>: <a href="articles/getting-started.html">Getting Started with skiresultsR</a>
 </li>
 <li>
 <strong>Function Reference</strong>: <a href="reference/index.html">Reference Documentation</a>
 </li>
 <li>
-<strong>Package Website</strong>: <a href="https://yourusername.github.io/skiResultsR/" class="external-link">skiResultsR Documentation</a>
+<strong>Package Website</strong>: <a href="https://justinjtownsend.github.io/skiresultsR/">skiresultsR Documentation</a>
 </li>
 </ul>
-</div>
-<div class="section level2">
-<h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
-</h2>
-<p>We welcome contributions! Please see our <a href="CONTRIBUTING.html">Contributing Guide</a> for details.</p>
 </div>
 <div class="section level2">
 <h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
@@ -286,7 +271,7 @@
 <h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
 </h2>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"skiResultsR"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"skiresultsR"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="related-packages">Related Packages<a class="anchor" aria-label="anchor" href="#related-packages"></a>
@@ -302,23 +287,22 @@
 <a href="https://ggplot2.tidyverse.org/" class="external-link"><code>ggplot2</code></a> - Data visualization (recommended for plotting)</li>
 </ul>
 <hr>
-<p><strong>skiResultsR</strong> - Making ski race data analysis accessible in R 🎿📊</p>
+<p><strong>skiresultsR</strong> - Making ski race data analysis accessible in R 🎿📊</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/justinjtownsend/skiResultsR/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/justinjtownsend/skiResultsR/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/justinjtownsend/skiresultsR/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/justinjtownsend/skiresultsR/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
 <div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li>
-<a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
-</li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
 
@@ -326,7 +310,7 @@
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html#citation">Citing skiResultsR</a></li>
+<li><a href="authors.html#citation">Citing skiresultsR</a></li>
 </ul>
 </div>
 
@@ -340,8 +324,7 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/yourusername/skiResultsR/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/yourusername/skiResultsR/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://CRAN.R-project.org/package=skiResultsR" class="external-link"><img src="https://www.r-pkg.org/badges/version/skiResultsR" alt="CRAN status"></a></li>
+<li><a href="https://CRAN.R-project.org/package=skiresultsR" class="external-link"><img src="https://www.r-pkg.org/badges/version/skiresultsR" alt="CRAN status"></a></li>
 </ul>
 </div>
 

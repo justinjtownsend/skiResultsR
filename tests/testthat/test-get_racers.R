@@ -1,5 +1,5 @@
 test_that("get_racers works with sample data", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_racers(file_path)
@@ -27,7 +27,7 @@ test_that("get_racers handles missing file", {
 })
 
 test_that("get_racers returns unique racers only", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_racers(file_path)
@@ -37,7 +37,7 @@ test_that("get_racers returns unique racers only", {
 })
 
 test_that("get_racers extracts valid URLs", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_racers(file_path)
@@ -53,7 +53,7 @@ test_that("get_racers extracts valid URLs", {
 test_that("get_racers handles empty results gracefully", {
   # This test would need a file with no racer links
   # For now, just ensure the function returns the right structure even with no data
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_racers(file_path)

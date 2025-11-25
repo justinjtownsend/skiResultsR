@@ -1,11 +1,11 @@
-# skiResultsR <img src="man/figures/logo.png" align="right" height="139" alt="" />
+# skiresultsR <img src="man/figures/logo.png" align="right" height="139" alt="" />
 
 <!-- badges: start -->
-# [![R-CMD-check](https://github.com/justinjtownsend/skiResultsR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/justinjtownsend/skiResultsR/actions/workflows/R-CMD-check.yaml)
-[![CRAN status](https://www.r-pkg.org/badges/version/skiResultsR)](https://CRAN.R-project.org/package=skiResultsR)
+<!-- [![R-CMD-check](https://github.com/justinjtownsend/skiresultsR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/justinjtownsend/skiresultsR/actions/workflows/R-CMD-check.yaml) -->
+[![CRAN status](https://www.r-pkg.org/badges/version/skiresultsR)](https://CRAN.R-project.org/package=skiresultsR)
 <!-- badges: end -->
 
-`skiResultsR` provides a thoughtful set of functions to extract race data from HTML files generated at skiresults.co.uk. It is designed to work with an event, extracting all races, racers and their clubs. Other information about the event is also captured.
+`skiresultsR` provides a thoughtful set of functions to extract race data from HTML files generated at skiresults.co.uk. It is designed to work with an event, extracting all races, racers and their clubs. Other information about the event is also captured.
 
 ## Features
 
@@ -18,15 +18,15 @@
 
 ```r
 # Or install development version from GitHub
-devtools::install_github("justinjtownsend/skiResultsR")
+devtools::install_github("justinjtownsend/skiresultsR")
 ```
 ## Quick Start
 
 ```r
-library(skiResultsR)
+library(skiresultsR)
 
 # Get path to sample data
-file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 
 # Extract complete event data
 event_data <- get_event(file_path)
@@ -109,7 +109,7 @@ str(event_data, max.level = 2)
 #>   ..$ racers    : tibble [97 × 7] (S3: tbl_df/tbl/data.frame)
 #>   ..$ points    :List of 2
 #>   ..$ clubs     : tibble [10 × 2] (S3: tbl_df/tbl/data.frame)
-#>   ..- attr(*, "class")= chr [1:2] "skiResults_event" "list"
+#>   ..- attr(*, "class")= chr [1:2] "skiresults_event" "list"
 
 ```
 
@@ -122,14 +122,14 @@ The package includes sample HTML files for testing and examples:
 
 ```r
 # List available sample files
-list.files(system.file("extdata", package = "skiResultsR"))
+list.files(system.file("extdata", package = "skiresultsR"))
 ```
 
 ## Documentation
 
-- **Vignette**: [Getting Started with skiResultsR](articles/getting-started.html)
+- **Vignette**: [Getting Started with skiresultsR](articles/getting-started.html)
 - **Function Reference**: [Reference Documentation](reference/index.html)
-- **Package Website**: [skiResultsR Documentation](https://justinjtownsend.github.io/skiResultsR/)
+- **Package Website**: [skiresultsR Documentation](https://justinjtownsend.github.io/skiresultsR/)
 
 ## License
 
@@ -138,7 +138,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Citation
 
 ```r
-citation("skiResultsR")
+citation("skiresultsR")
 ```
 
 ## Related Packages
@@ -150,4 +150,4 @@ citation("skiResultsR")
 
 ---
 
-**skiResultsR** - Making ski race data analysis accessible in R 🎿📊
+**skiresultsR** - Making ski race data analysis accessible in R 🎿📊

@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(skiResultsR)
+library(skiresultsR)
 
-test_check("skiResultsR")
+test_check("skiresultsR")

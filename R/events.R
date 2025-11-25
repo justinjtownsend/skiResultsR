@@ -1,7 +1,7 @@
 #' Extract all event information from an HTML file
 #'
 #' This function produces a fully extracted skiResults event. It relies only on
-#' pre-existing functions within the skiResultsR package to return a valid result.
+#' pre-existing functions within the skiresultsR package to return a valid result.
 #'
 #' @param file_path Path to the HTML file containing event results
 #' @return An object of class "skiresults_event" (a list) containing:
@@ -20,7 +20,7 @@
 #' @examples
 #' \dontrun{
 #' # Extract complete event data
-#' file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+#' file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 #' event <- get_event(file_path)
 #' 
 #' # Check the class
@@ -195,7 +195,7 @@ get_event <- function(file_path) {
 #' @examples
 #' \dontrun{
 #' # Extract event details
-#' file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+#' file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 #' event_dtls <- get_event_dtls(file_path)
 #' 
 #' print(event_dtls$title)
@@ -291,10 +291,10 @@ get_event_dtls <- function(file_path) {
 #' Produce a summary of a skiResults event
 #'
 #' This function produces a summary of a skiResults event from an object
-#' with class "skiResults_event". It returns race summary statistics and
+#' with class "skiresults_event". It returns race summary statistics and
 #' participation statistics.
 #'
-#' @param event An object of class "skiResults_event". Note: get_event() returns
+#' @param event An object of class "skiresults_event". Note: get_event() returns
 #'   a nested list with event_id as the name. You must pass the inner element
 #'   (e.g., `event[[1]]`) to this function, not the outer list.
 #' @return A nested, named list with event_id as the name, containing:
@@ -309,10 +309,10 @@ get_event_dtls <- function(file_path) {
 #' @examples
 #' \dontrun{
 #' # Extract complete event data
-#' file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+#' file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 #' event_data <- get_event(file_path)
 #' 
-#' # Get the actual event object (has class "skiResults_event")
+#' # Get the actual event object (has class "skiresults_event")
 #' event <- event_data[[1]]
 #' 
 #' # Get event summary
@@ -325,9 +325,9 @@ get_event_dtls <- function(file_path) {
 #' summary[[1]]$race_participation
 #' }
 get_event_summary <- function(event) {
-  # Step 2: Check if event has class "skiResults_event"
-  if (!inherits(event, "skiResults_event")) {
-    stop("event must be of class 'skiResults_event'. Use get_event() to create one.")
+  # Step 2: Check if event has class "skiresults_event"
+  if (!inherits(event, "skiresults_event")) {
+    stop("event must be of class 'skiresults_event'. Use get_event() to create one.")
   }
   
   # Step 4: Find race_id with max(tbl_cols_cnt)

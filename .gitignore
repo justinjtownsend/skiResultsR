@@ -19,3 +19,4 @@
 tests/manual_integration_test.R
 tests/manual_run_tests.R.txt
 check_output.log
+docs

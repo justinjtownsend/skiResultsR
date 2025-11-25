@@ -1,5 +1,5 @@
 test_that("get_event_dtls works with sample data", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   if (!file.exists(file_path) || file_path == "") {
     file_path <- file.path("inst", "extdata", "chatham_oct2023.html")
   }
@@ -25,7 +25,7 @@ test_that("get_event_dtls works with sample data", {
 })
 
 test_that("get_event_dtls extracts title correctly", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   if (!file.exists(file_path) || file_path == "") {
     file_path <- file.path("inst", "extdata", "chatham_oct2023.html")
   }
@@ -40,7 +40,7 @@ test_that("get_event_dtls extracts title correctly", {
 })
 
 test_that("get_event_dtls extracts date in ISO format", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   if (!file.exists(file_path) || file_path == "") {
     file_path <- file.path("inst", "extdata", "chatham_oct2023.html")
   }
@@ -57,7 +57,7 @@ test_that("get_event_dtls extracts date in ISO format", {
 })
 
 test_that("get_event_dtls extracts slope information", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   if (!file.exists(file_path) || file_path == "") {
     file_path <- file.path("inst", "extdata", "chatham_oct2023.html")
   }
@@ -78,7 +78,7 @@ test_that("get_event_dtls extracts slope information", {
 })
 
 test_that("get_event_dtls extracts format and status", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   if (!file.exists(file_path) || file_path == "") {
     file_path <- file.path("inst", "extdata", "chatham_oct2023.html")
   }
@@ -103,7 +103,7 @@ test_that("get_event_dtls handles missing file", {
 })
 
 test_that("get_event_dtls returns consistent structure", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   if (!file.exists(file_path) || file_path == "") {
     file_path <- file.path("inst", "extdata", "chatham_oct2023.html")
   }

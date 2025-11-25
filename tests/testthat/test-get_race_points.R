@@ -1,5 +1,5 @@
 test_that("get_race_points works with sample data", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_race_points(file_path)
@@ -30,7 +30,7 @@ test_that("get_race_points handles missing file", {
 })
 
 test_that("get_race_points handles files with no points", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_race_points(file_path)
@@ -47,7 +47,7 @@ test_that("get_race_points handles files with no points", {
 })
 
 test_that("get_race_points extracts valid race IDs", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_race_points(file_path)
@@ -60,7 +60,7 @@ test_that("get_race_points extracts valid race IDs", {
 })
 
 test_that("get_race_points handles points categories correctly", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_race_points(file_path)

@@ -28,7 +28,7 @@ racer and club information for all races in the event.
 \examples{
 \dontrun{
 # Extract all race tables
-file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 races <- get_races(file_path)
 
 # View race IDs
@@ -46,7 +46,7 @@ for each race ID to extract the complete race results.
 
 \dontrun{
 # Extract all races from an event
-file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 races <- get_races(file_path)
 
 # Access specific race by ID

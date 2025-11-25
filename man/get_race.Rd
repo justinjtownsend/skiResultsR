@@ -22,7 +22,7 @@ rvest::html_table() to produce the final data frame.
 \examples{
 \dontrun{
 # Extract specific race by ID
-file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 race_data <- get_race(file_path, "race-9973")
 
 head(race_data)

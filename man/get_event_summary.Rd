@@ -29,7 +29,7 @@ race types, and hyperlinks.
 \examples{
 \dontrun{
 # Extract event summary
-file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 event_summary <- get_event_summary(file_path)
 
 print(event_summary$title)

@@ -33,7 +33,7 @@ across multiple columns (one per points category).
 \examples{
 \dontrun{
 # Extract points for a specific race
-file_path <- system.file("extdata", "brentwood_jun2023.html", package = "skiResultsR")
+file_path <- system.file("extdata", "brentwood_jun2023.html", package = "skiresultsR")
 points_data <- get_points(file_path, "race-9711")
 
 head(points_data)

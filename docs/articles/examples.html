@@ -5,7 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Function Examples • skiResultsR</title>
+<title>Function Examples • skiresultsR</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" sizes="any" href="../favicon.ico">
+<link rel="manifest" href="../site.webmanifest">
 <script src="../lightswitch.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
@@ -18,7 +23,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top " aria-label="Site navigation"><div class="container">
 
-    <a class="navbar-brand me-2" href="../index.html">skiResultsR</a>
+    <a class="navbar-brand me-2" href="../index.html">skiresultsR</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
@@ -34,7 +39,7 @@
 <li class="active nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started with skiResultsR</a></li>
+<li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started with skiresultsR</a></li>
     <li><a class="dropdown-item" href="../articles/examples.html">Function Examples</a></li>
   </ul>
 </li>
@@ -43,7 +48,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/justinjtownsend/skiResultsR" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/justinjtownsend/skiresultsR" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-lightswitch" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Light switch"><span class="fa fa-sun"></span></button>
   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-lightswitch">
@@ -64,11 +69,10 @@
 
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-
-      <h1>Function Examples</h1>
+      <img src="../logo.png" class="logo" alt=""><h1>Function Examples</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/justinjtownsend/skiResultsR/blob/HEAD/vignettes/examples.Rmd" class="external-link"><code>vignettes/examples.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/justinjtownsend/skiresultsR/blob/HEAD/vignettes/examples.Rmd" class="external-link"><code>vignettes/examples.Rmd</code></a></small>
       <div class="d-none name"><code>examples.Rmd</code></div>
     </div>
 
@@ -78,16 +82,16 @@
 <h2 id="function-examples">Function Examples<a class="anchor" aria-label="anchor" href="#function-examples"></a>
 </h2>
 <p>This vignette demonstrates practical examples of using the
-skiResultsR functions with sample data. These examples show you exactly
+skiresultsR functions with sample data. These examples show you exactly
 how to use each function and what to expect from the output.</p>
 <div class="section level3">
 <h3 id="setup">Setup<a class="anchor" aria-label="anchor" href="#setup"></a>
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://justinjtownsend.github.io/skiResultsR/">skiResultsR</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://justinjtownsend.github.io/skiresultsR/">skiresultsR</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Get path to sample data with fallback for development</span></span>
-<span><span class="va">file_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"chatham_oct2023.html"</span>, package <span class="op">=</span> <span class="st">"skiResultsR"</span><span class="op">)</span></span>
+<span><span class="va">file_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"chatham_oct2023.html"</span>, package <span class="op">=</span> <span class="st">"skiresultsR"</span><span class="op">)</span></span>
 <span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.exists</a></span><span class="op">(</span><span class="va">file_path</span><span class="op">)</span> <span class="op">||</span> <span class="va">file_path</span> <span class="op">==</span> <span class="st">""</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">file_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="st">"inst"</span>, <span class="st">"extdata"</span>, <span class="st">"chatham_oct2023.html"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
@@ -164,7 +168,7 @@ how to use each function and what to expect from the output.</p>
 <span>  </span>
 <span>  <span class="co"># Extract complete event data</span></span>
 <span>  <span class="va">event_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_event.html">get_event</a></span><span class="op">(</span><span class="va">file_path</span><span class="op">)</span></span>
-<span>  <span class="va">event</span> <span class="op">&lt;-</span> <span class="va">event_data</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>  <span class="co"># Get the inner element with class "skiResults_event"</span></span>
+<span>  <span class="va">event</span> <span class="op">&lt;-</span> <span class="va">event_data</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>  <span class="co"># Get the inner element with class "skiresults_event"</span></span>
 <span>  </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"Event Title:"</span>, <span class="va">event</span><span class="op">$</span><span class="va">event_dtls</span><span class="op">$</span><span class="va">title</span>, <span class="st">"\n"</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"Number of races found:"</span>, <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">event</span><span class="op">$</span><span class="va">races</span><span class="op">)</span>, <span class="st">"\n"</span><span class="op">)</span></span>
@@ -187,11 +191,11 @@ how to use each function and what to expect from the output.</p>
 <span><span class="op">}</span></span>
 <span><span class="co">#&gt; Example 2: Processing a complete event</span></span>
 <span><span class="co">#&gt; ----------------------------------------</span></span>
-<span><span class="co">#&gt; Event Title: Chatham Ski Slope: LSERSA (07 October 2023) </span></span>
-<span><span class="co">#&gt; Number of races found: 5 </span></span>
-<span><span class="co">#&gt; Number of unique racers: 97 </span></span>
-<span><span class="co">#&gt; Number of points entries: 102 </span></span>
-<span><span class="co">#&gt; Number of clubs: 10</span></span></code></pre></div>
+<span><span class="co">#&gt; Event Title: </span></span>
+<span><span class="co">#&gt; Number of races found: 0 </span></span>
+<span><span class="co">#&gt; Number of unique racers: 0</span></span>
+<span><span class="co">#&gt; Number of points entries: 0</span></span>
+<span><span class="co">#&gt; Number of clubs: 0</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="example-3-working-with-individual-races">Example 3: Working with Individual Races<a class="anchor" aria-label="anchor" href="#example-3-working-with-individual-races"></a>
@@ -547,7 +551,7 @@ how to use each function and what to expect from the output.</p>
 <div class="section level3">
 <h3 id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
 </h3>
-<p>These examples demonstrate the key capabilities of the skiResultsR
+<p>These examples demonstrate the key capabilities of the skiresultsR
 package:</p>
 <ol style="list-style-type: decimal">
 <li>

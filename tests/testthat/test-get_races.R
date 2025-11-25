@@ -1,5 +1,5 @@
 test_that("get_races works with sample data", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   if (!file.exists(file_path) || file_path == "") {
     file_path <- file.path("inst", "extdata", "chatham_oct2023.html")
   }
@@ -29,7 +29,7 @@ test_that("get_races handles missing file", {
 })
 
 test_that("get_races extracts race IDs correctly", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   if (!file.exists(file_path) || file_path == "") {
     file_path <- file.path("inst", "extdata", "chatham_oct2023.html")
   }
@@ -49,7 +49,7 @@ test_that("get_races extracts race IDs correctly", {
 })
 
 test_that("get_races returns consistent structure", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   if (!file.exists(file_path) || file_path == "") {
     file_path <- file.path("inst", "extdata", "chatham_oct2023.html")
   }

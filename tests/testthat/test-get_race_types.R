@@ -1,6 +1,6 @@
 test_that("get_race_types works with brentwood sample data", {
   # Get sample file path - try system.file first, then direct path
-  file_path <- system.file("extdata", "brentwood_jun2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "brentwood_jun2023.html", package = "skiresultsR")
   if (!file.exists(file_path) || file_path == "") {
     file_path <- file.path("inst", "extdata", "brentwood_jun2023.html")
   }
@@ -50,7 +50,7 @@ test_that("get_race_types works with brentwood sample data", {
 
 test_that("get_race_types works with chatham sample data", {
   # Get sample file path - try system.file first, then direct path
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   if (!file.exists(file_path) || file_path == "") {
     file_path <- file.path("inst", "extdata", "chatham_oct2023.html")
   }
@@ -110,7 +110,7 @@ test_that("get_race_types handles missing file", {
 
 test_that("get_race_types extracts correct event IDs", {
   # Test brentwood
-  file_path_brentwood <- system.file("extdata", "brentwood_jun2023.html", package = "skiResultsR")
+  file_path_brentwood <- system.file("extdata", "brentwood_jun2023.html", package = "skiresultsR")
   if (!file.exists(file_path_brentwood) || file_path_brentwood == "") {
     file_path_brentwood <- file.path("inst", "extdata", "brentwood_jun2023.html")
   }
@@ -120,7 +120,7 @@ test_that("get_race_types extracts correct event IDs", {
   expect_equal(names(result_brentwood)[1], "1316")
   
   # Test chatham
-  file_path_chatham <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path_chatham <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   if (!file.exists(file_path_chatham) || file_path_chatham == "") {
     file_path_chatham <- file.path("inst", "extdata", "chatham_oct2023.html")
   }

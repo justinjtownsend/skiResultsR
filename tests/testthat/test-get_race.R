@@ -1,5 +1,5 @@
 test_that("get_race works with valid race ID", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   # Test with a known race ID
@@ -23,7 +23,7 @@ test_that("get_race handles missing file", {
 })
 
 test_that("get_race handles missing race_id", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   expect_error(
@@ -43,7 +43,7 @@ test_that("get_race handles missing race_id", {
 })
 
 test_that("get_race handles invalid race ID", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   expect_error(
@@ -53,7 +53,7 @@ test_that("get_race handles invalid race ID", {
 })
 
 test_that("get_race processes individual race table (race-9973)", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_race(file_path, "race-9973")
@@ -80,7 +80,7 @@ test_that("get_race processes individual race table (race-9973)", {
 })
 
 test_that("get_race processes Points header correctly (Rule 5.2)", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_race(file_path, "race-9973")
@@ -96,7 +96,7 @@ test_that("get_race processes Points header correctly (Rule 5.2)", {
 })
 
 test_that("get_race processes team race with win_for attributes (race-9974)", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_race(file_path, "race-9974")
@@ -124,7 +124,7 @@ test_that("get_race processes team race with win_for attributes (race-9974)", {
 })
 
 test_that("get_race processes club race table (race-9981)", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_race(file_path, "race-9981")
@@ -139,7 +139,7 @@ test_that("get_race processes club race table (race-9981)", {
 })
 
 test_that("get_race extracts nested text correctly (Rule 6.1)", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_race(file_path, "race-9973")
@@ -165,7 +165,7 @@ test_that("get_race extracts nested text correctly (Rule 6.1)", {
 })
 
 test_that("get_race extracts display:inline span values (Rule 6.2)", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_race(file_path, "race-9973")
@@ -190,7 +190,7 @@ test_that("get_race extracts display:inline span values (Rule 6.2)", {
 
 test_that("get_race handles multiple race types from different files", {
   # Test with chatham_oct2023.html
-  file_path1 <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path1 <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path1), "Sample HTML file not found")
   
   result1 <- get_race(file_path1, "race-9973")
@@ -198,7 +198,7 @@ test_that("get_race handles multiple race types from different files", {
   expect_true(nrow(result1) > 0)
   
   # Test with brentwood_jun2023.html if available
-  file_path2 <- system.file("extdata", "brentwood_jun2023.html", package = "skiResultsR")
+  file_path2 <- system.file("extdata", "brentwood_jun2023.html", package = "skiresultsR")
   if (file.exists(file_path2)) {
     result2 <- get_race(file_path2, "race-9711")
     expect_s3_class(result2, "data.frame")
@@ -207,7 +207,7 @@ test_that("get_race handles multiple race types from different files", {
 })
 
 test_that("get_race produces consistent column names", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   # Test multiple races from same file
@@ -233,7 +233,7 @@ test_that("get_race produces consistent column names", {
 })
 
 test_that("get_race handles time columns with DNS/DNF/DSQ values", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_race(file_path, "race-9973")
@@ -259,7 +259,7 @@ test_that("get_race handles time columns with DNS/DNF/DSQ values", {
 })
 
 test_that("get_race processes header nesting correctly (Rule 5.1)", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_race(file_path, "race-9981")
@@ -274,7 +274,7 @@ test_that("get_race processes header nesting correctly (Rule 5.1)", {
 })
 
 test_that("get_race returns data frame suitable for further processing", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   skip_if_not(file.exists(file_path), "Sample HTML file not found")
   
   result <- get_race(file_path, "race-9973")

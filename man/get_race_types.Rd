@@ -29,7 +29,7 @@ for an event and returns structured data with event ID and race information.
 \examples{
 \dontrun{
 # Extract race types from an event
-file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 race_types <- get_race_types(file_path)
 
 # Access the event ID (name of the list)

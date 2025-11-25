@@ -27,7 +27,7 @@
 #' @examples
 #' \dontrun{
 #' # Extract race types from an event
-#' file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+#' file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 #' race_types <- get_race_types(file_path)
 #' 
 #' # Access race types
@@ -239,7 +239,7 @@ get_race_types <- function(file_path, ext = NULL) {
 #' @examples
 #' \dontrun{
 #' # Extract clubs from a specific race
-#' file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+#' file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 #' clubs <- get_clubs(file_path, "race-9973")
 #' 
 #' head(clubs)

@@ -1,6 +1,6 @@
 test_that("get_event_summary works with sample data", {
   # Get sample file path - try system.file first, then direct path
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   if (!file.exists(file_path) || file_path == "") {
     file_path <- file.path("inst", "extdata", "chatham_oct2023.html")
   }
@@ -33,7 +33,7 @@ test_that("get_event_summary handles missing file", {
 })
 
 test_that("get_event_summary extracts date information", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   if (!file.exists(file_path) || file_path == "") {
     file_path <- file.path("inst", "extdata", "chatham_oct2023.html")
   }
@@ -49,7 +49,7 @@ test_that("get_event_summary extracts date information", {
 })
 
 test_that("get_event_summary extracts slope information", {
-  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+  file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
   if (!file.exists(file_path) || file_path == "") {
     file_path <- file.path("inst", "extdata", "chatham_oct2023.html")
   }

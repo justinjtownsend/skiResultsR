@@ -17,15 +17,15 @@ knitr::opts_chunk$set(
 
 # Function Examples
 
-This vignette demonstrates practical examples of using the skiResultsR functions with sample data. These examples show you exactly how to use each function and what to expect from the output.
+This vignette demonstrates practical examples of using the skiresultsR functions with sample data. These examples show you exactly how to use each function and what to expect from the output.
 
 ## Setup
 
 ```{r setup}
-library(skiResultsR)
+library(skiresultsR)
 
 # Get path to sample data with fallback for development
-file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 if (!file.exists(file_path) || file_path == "") {
   file_path <- file.path("inst", "extdata", "chatham_oct2023.html")
 }
@@ -80,7 +80,7 @@ if (!file.exists(file_path)) {
   
   # Extract complete event data
   event_data <- get_event(file_path)
-  event <- event_data[[1]]  # Get the inner element with class "skiResults_event"
+  event <- event_data[[1]]  # Get the inner element with class "skiresults_event"
   
   cat("Event Title:", event$event_dtls$title, "\n")
   cat("Number of races found:", length(event$races), "\n")
@@ -314,7 +314,7 @@ if (!file.exists(file_path)) {
 
 ## Summary
 
-These examples demonstrate the key capabilities of the skiResultsR package:
+These examples demonstrate the key capabilities of the skiresultsR package:
 
 1. **Complete event extraction** with `get_event()`
 2. **Individual race analysis** with `get_race()` and `get_races()`

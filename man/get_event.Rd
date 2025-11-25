@@ -27,7 +27,7 @@ all race tables, racer information, points data, and club information.
 \examples{
 \dontrun{
 # Extract complete event data
-file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 event_data <- get_event(file_path)
 
 # Access different components

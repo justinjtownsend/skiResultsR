@@ -28,7 +28,7 @@ title, date (in ISO format), slope, slope URL, format, and status.
 \examples{
 \dontrun{
 # Extract event details
-file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 event_dtls <- get_event_dtls(file_path)
 
 print(event_dtls$title)

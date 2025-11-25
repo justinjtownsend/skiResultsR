@@ -26,7 +26,7 @@ and club information. Ensures unique rows only.
 \examples{
 \dontrun{
 # Extract all racers from an event
-file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 racers <- get_racers(file_path)
 
 head(racers)
