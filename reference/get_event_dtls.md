@@ -50,7 +50,7 @@ A tibble with columns:
 ``` r
 if (FALSE) { # \dontrun{
 # Extract event details
-file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 event_dtls <- get_event_dtls(file_path)
 
 print(event_dtls$title)

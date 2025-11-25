@@ -37,7 +37,7 @@ A data frame containing:
 ``` r
 if (FALSE) { # \dontrun{
 # Extract all clubs from an event
-file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiResultsR")
+file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 clubs <- get_clubs(file_path)
 
 head(clubs)
