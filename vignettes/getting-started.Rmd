@@ -35,7 +35,11 @@ devtools::install()
 
 ```{r setup}
 library(skiresultsR)
+```
 
+## Sourcing the Data
+
+```{r source-data, cache=TRUE}
 # Get path to sample data
 file_path <- system.file("extdata", "chatham_oct2023.html", package = "skiresultsR")
 ```
@@ -60,9 +64,9 @@ The `skiresultsR` package provides six main functions, organized into primary an
 
 ## 1. Getting Complete Event Data
 
-The easiest way to start is with `get_event()`, which extracts all available information:
+The fastest way to start is with `get_event()`, which extracts all available event data:
 
-```{r get-event, dependson="setup"}
+```{r get-event, dependson="source-data", cache=TRUE}
 # Extract complete event data
 event_data <- get_event(file_path)
 
@@ -81,7 +85,7 @@ The `get_event()` function returns a nested list with event_id as the name. The 
 
 ## 2. Exploring Event Details
 
-```{r explore-event, dependson="get-event"}
+```{r explore-event, dependson="get-event", cache=TRUE}
 # Get the actual event object (inner element)
 event <- event_data[[1]]
 
@@ -142,9 +146,9 @@ if ("Club" %in% names(racers)) {
 
 If you need event summary statistics, use `get_event_summary()` with an event object:
 
-```{r event-summary, dependson="explore-event"}
+```{r event-summary, dependson="get-event"}
 # Get event summary
-summary <- get_event_summary(event)
+summary <- get_event_summary(event_data)
 
 # Access race summary and participation statistics
 event_id <- names(summary)[1]
@@ -159,7 +163,7 @@ print(summary[[1]]$race_participation)
 
 To extract all race tables:
 
-```{r all-races, dependson="setup"}
+```{r all-races, dependson="source-data"}
 # Get all races
 all_races <- get_races(file_path)
 
@@ -179,7 +183,7 @@ if (length(all_races) > 0) {
 
 To extract just one race by its ID:
 
-```{r specific-race, dependson="setup"}
+```{r specific-race, dependson="source-data"}
 # Get available race IDs first
 races <- get_races(file_path)
 race_ids <- names(races)
@@ -203,7 +207,7 @@ if (length(race_ids) > 0) {
 
 To extract points information for a specific race:
 
-```{r race-points, dependson="setup"}
+```{r race-points, dependson="source-data"}
 # First get race IDs
 races <- get_races(file_path)
 if (length(races) > 0) {
@@ -230,7 +234,7 @@ if (length(races) > 0) {
 
 To extract just racer information with links:
 
-```{r racers-only, dependson="setup"}
+```{r racers-only, dependson="source-data"}
 # First get race IDs
 races <- get_races(file_path)
 if (length(races) > 0) {
@@ -253,11 +257,9 @@ if (length(races) > 0) {
 }
 ```
 
-# Data Analysis Examples
-
 ## Race Performance Analysis
 
-```{r performance-analysis, dependson="setup"}
+```{r performance-analysis, dependson="source-data"}
 # Get a specific race for analysis
 races <- get_races(file_path)
 if (length(races) > 0) {
@@ -306,7 +308,7 @@ if (length(races) > 0) {
 
 ## Points Analysis
 
-```{r points-analysis, dependson="setup"}
+```{r points-analysis, dependson="source-data"}
 # Analyze points distribution for a specific race
 races <- get_races(file_path)
 if (length(races) > 0) {
@@ -346,7 +348,7 @@ tryCatch({
 - Use `get_event()` for comprehensive analysis
 - Use `get_event_summary()` for quick metadata checks
 - Use `get_race()` when you know the specific race you want
-- Use helper functions for targeted data extraction
+- Use helper functions for targeted data extraction, e.g. `get_race_types()`
 
 ## 3. Data Validation
 
@@ -370,7 +372,7 @@ if (is.null(event$races) || length(event$races) == 0) {
 
 # Conclusion
 
-The `skiresultsR` package provides a comprehensive toolkit for extracting and analyzing ski race results. The functions are designed to be intuitive and consistent, making it easy to work with ski race data in R.
+The `skiresultsR` package provides a thoughtful extraction toolkit for ski race results. The functions are designed to be intuitive, consistent and inline with teh interface published on the skiresults site, making it easy to work with this data in R.
 
 For more detailed information about each function, see the function documentation using `?function_name` (e.g., `?get_event`).
 
