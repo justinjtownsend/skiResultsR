@@ -62,7 +62,7 @@ The `skiresultsR` package provides six main functions, organized into primary an
 
 The easiest way to start is with `get_event()`, which extracts all available information:
 
-```{r get-event}
+```{r get-event, dependson="setup"}
 # Extract complete event data
 event_data <- get_event(file_path)
 
@@ -81,7 +81,7 @@ The `get_event()` function returns a nested list with event_id as the name. The 
 
 ## 2. Exploring Event Details
 
-```{r explore-event}
+```{r explore-event, dependson="get-event"}
 # Get the actual event object (inner element)
 event <- event_data[[1]]
 
@@ -97,7 +97,7 @@ print(event$race_types$race_type)
 
 ## 3. Working with Race Data
 
-```{r work-races}
+```{r work-races, dependson="explore-event"}
 # View available races
 race_names <- names(event$races)
 cat("Found", length(race_names), "races:\n")
@@ -121,7 +121,7 @@ if (length(race_names) > 0) {
 
 ## 4. Analyzing Racer Information
 
-```{r analyze-racers}
+```{r analyze-racers, dependson="explore-event"}
 # View racer information
 racers <- event$racers
 cat("Found", nrow(racers), "unique racers\n")
@@ -142,7 +142,7 @@ if ("Club" %in% names(racers)) {
 
 If you need event summary statistics, use `get_event_summary()` with an event object:
 
-```{r event-summary}
+```{r event-summary, dependson="explore-event"}
 # Get event summary
 summary <- get_event_summary(event)
 
@@ -159,7 +159,7 @@ print(summary[[1]]$race_participation)
 
 To extract all race tables:
 
-```{r all-races}
+```{r all-races, dependson="setup"}
 # Get all races
 all_races <- get_races(file_path)
 
@@ -179,7 +179,7 @@ if (length(all_races) > 0) {
 
 To extract just one race by its ID:
 
-```{r specific-race}
+```{r specific-race, dependson="setup"}
 # Get available race IDs first
 races <- get_races(file_path)
 race_ids <- names(races)
@@ -203,7 +203,7 @@ if (length(race_ids) > 0) {
 
 To extract points information for a specific race:
 
-```{r race-points}
+```{r race-points, dependson="setup"}
 # First get race IDs
 races <- get_races(file_path)
 if (length(races) > 0) {
@@ -230,7 +230,7 @@ if (length(races) > 0) {
 
 To extract just racer information with links:
 
-```{r racers-only}
+```{r racers-only, dependson="setup"}
 # First get race IDs
 races <- get_races(file_path)
 if (length(races) > 0) {
@@ -257,7 +257,7 @@ if (length(races) > 0) {
 
 ## Race Performance Analysis
 
-```{r performance-analysis}
+```{r performance-analysis, dependson="setup"}
 # Get a specific race for analysis
 races <- get_races(file_path)
 if (length(races) > 0) {
@@ -306,7 +306,7 @@ if (length(races) > 0) {
 
 ## Points Analysis
 
-```{r points-analysis}
+```{r points-analysis, dependson="setup"}
 # Analyze points distribution for a specific race
 races <- get_races(file_path)
 if (length(races) > 0) {
